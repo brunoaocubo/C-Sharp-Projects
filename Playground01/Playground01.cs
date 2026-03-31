@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace projects
 {
-    public class  Program()
+    public class  Playground01()
     {
         static void AddToList(List<object> list, string value)
         {
@@ -13,7 +13,17 @@ namespace projects
             {
                 if(list.Count >= 5)
                 {
-                    Console.WriteLine(obj);
+                    //double converObj = Convert.ToDouble(obj);
+                    bool number = double.TryParse(obj.ToString(), out double result);
+
+                    if (number)
+                    {
+                        Console.WriteLine(obj);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Desculpe, o valor {obj} não é um número");
+                    }
                 }
             }
         }
